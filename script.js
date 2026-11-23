@@ -158,3 +158,39 @@ journalForm.addEventListener("submit", function (event) {
 
 // Display saved entries when the page opens
 displayEntries();
+
+// Learning Library Search
+
+const searchInput = document.querySelector("#lesson-search");
+const lessonCards = document.querySelectorAll(".feature-card");
+const searchMessage = document.querySelector("#search-message");
+
+if (searchInput && searchMessage) {
+
+    searchInput.addEventListener("input", function () {
+
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        let visibleCount = 0;
+
+        lessonCards.forEach(function (card) {
+
+            const lessonText = card.textContent.toLowerCase();
+
+            if (lessonText.includes(searchTerm)) {
+                card.style.display = "";
+                visibleCount++;
+            } else {
+                card.style.display = "none";
+            }
+
+        });
+
+        if (searchTerm !== "" && visibleCount === 0) {
+            searchMessage.textContent = "No lessons found. Try another keyword.";
+        } else {
+            searchMessage.textContent = "";
+        }
+
+    });
+
+}
