@@ -666,3 +666,31 @@ body {
         padding: 18px;
     }
 }
+
+/* Learning Library Search */
+
+.library-search {
+    max-width: 550px;
+    margin: 30px auto 12px;
+}
+
+#lesson-search {
+    width: 100%;
+    padding: 15px 18px;
+    border: 1px solid #dbe3ef;
+    border-radius: 12px;
+    font-size: 16px;
+    outline: none;
+    background: white;
+}
+
+#lesson-search:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.search-message {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 20px;
+}
